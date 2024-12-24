@@ -1,7 +1,8 @@
 name: event_sender
-  on:
-    schedule:
-      - cron: '0 9 * * *'
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
 
 jobs:
   sender:
@@ -16,4 +17,4 @@ jobs:
       - name: Build unkobot
         run: nix build .#unkobot
       - name: Run unkobot
-        run: ./result/bin/unkobot ${{ secrets.UNKOBOT_SECRET_KEY }} $(cat pubkey.txt)
+        run: ./result/bin/unkobot "${{ secrets.UNKOBOT_SECRET_KEY }}" "$(cat pubkey.txt)"
