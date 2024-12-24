@@ -93,6 +93,7 @@
             packages = [
               rust
               pkgs.nil
+              pkgs.rana
             ];
 
             shellHook = ''
