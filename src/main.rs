@@ -37,7 +37,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let metadata = Metadata::new()
         .name("unkobot")
         .about("This bot says 'Unko!!'. authored by https://github.com/haruki7049")
-        .website(Url::parse("https://github.com/haruki7049/nostr-unko-posting-bot")?)
+        .website(Url::parse(
+            "https://github.com/haruki7049/nostr-unko-posting-bot",
+        )?)
         .display_name("Unko Bot");
     client.set_metadata(&metadata).await?;
 
