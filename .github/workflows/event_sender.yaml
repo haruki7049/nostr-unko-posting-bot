@@ -1,8 +1,10 @@
 name: event_sender
 
-on:
-  schedule:
-    - cron: '0 9 * * *'
+on: workflow_dispatch
+
+#on:
+#  schedule:
+#    - cron: '0 9 * * *'
 
 jobs:
   sender:
