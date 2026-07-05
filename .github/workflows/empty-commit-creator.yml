@@ -1,0 +1,19 @@
+name: "cron-flake-update"
+  
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7.0.0
+      with:
+        token: ${{ secrets.PAT }}
+    - name: Create an empty commit
+      run: |
+        git config user.name haruki7049
+        git config user.email tontonkirikiri@gmail.com
+        git commit -m "Empty commit to run CI" --allow-empty
+        git push
