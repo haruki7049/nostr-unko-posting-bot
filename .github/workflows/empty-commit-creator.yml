@@ -1,4 +1,4 @@
-name: "cron-flake-update"
+name: "empty-commit-creator"
   
 on:
   schedule:
